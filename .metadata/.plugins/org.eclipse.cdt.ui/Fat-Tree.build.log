@@ -1,0 +1,9 @@
+15:45:45 **** Incremental Build of configuration release for project Fat-Tree ****
+make MODE=release all 
+cd src && /usr/bin/make
+make[1]: Entering directory '/c/Users/bannu/Desktop/CloudComputing/Fat-Tree/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/c/Users/bannu/Desktop/CloudComputing/Fat-Tree/src'
+
+15:45:45 Build Finished. 0 errors, 0 warnings. (took 241ms)
+

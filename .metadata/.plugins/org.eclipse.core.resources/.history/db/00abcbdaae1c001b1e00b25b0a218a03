@@ -1,0 +1,5 @@
+[General]
+network = Tictoc10
+
+[config Tictoc10]
+network = Tictoc10

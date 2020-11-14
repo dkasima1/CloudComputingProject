@@ -1,0 +1,160 @@
+package fat_tree_inet.simulations;
+
+import inet.examples.inet.ipv4hook.MyHost;
+import inet.examples.inet.ipv4hook.MyRouter;
+import inet.mobility.base.MovingMobilityBase;
+import inet.node.inet.StandardHost;
+
+
+@license(LGPL);
+//
+// TODO documentation
+//
+network Network
+{   
+    parameters:
+        @display("bgb=1330,893");
+        int num_leafs @prompt("Number of end users") = default(16);
+        int num_agg = num_leafs;
+        int num_spines = num_agg / 4;
+        int num @display("bgb=1326,1100");
+    types:
+//        channel LeafAggChannel extends DatarateChannel {
+//            datarate = 10gbps;
+//            delay = 1us;
+//        }
+//        channel AggSpineChannel extends DatarateChannel {
+//         	datarate = 40gbps;
+//         	delay = 5us;   
+//        }
+//        {
+//            gates:
+//                input in;
+//                output out;
+//
+//        }
+//
+//        simple Switch
+//        {
+//            gates:
+//                input in1;
+//                input in2;
+//                input in3;
+//                input in4;
+//                output out1;
+//                output out2;
+//                output out3;
+//                output out4;
+//        }
+
+    submodules:
+        spine[num_spines]: EtherSwitch {
+        	parameters:
+        	    @display("p=100,200,r,50");
+        	gates:
+        	    ethg[num_aggs/4];
+        }
+        
+        agg[num_agg]: EtherSwitch {
+        	parameters:
+        	    @display("p=100,314,r,50");   
+            
+        }
+        myHost: MyHost {
+            @display("p=138,1108");
+        }
+        myHost1: MyHost {
+            @display("p=208,1108");
+        }
+        myHost2: MyHost {
+            @display("p=68,1108");
+        }
+        myHost3: MyHost {
+            @display("p=369,1108");
+        }
+        myHost4: MyHost {
+            @display("p=279,1108");
+        }
+        myHost5: MyHost {
+            @display("p=450,1108");
+        }
+        myHost6: MyHost {
+            @display("p=529,1108");
+        }
+        myHost7: MyHost {
+            @display("p=603,1108");
+        }
+        myHost8: MyHost {
+            @display("p=712,1108");
+        }
+        myHost9: MyHost {
+            @display("p=790,1108");
+        }
+        myHost10: MyHost {
+            @display("p=875,1108");
+        }
+        myHost11: MyHost {
+            @display("p=965,1108");
+        }
+        myHost12: MyHost {
+            @display("p=1052,1108");
+        }
+        myHost13: MyHost {
+            @display("p=1134,1108");
+        }
+        myHost14: MyHost {
+            @display("p=1218,1108");
+        }
+        myHost15: MyHost {
+            @display("p=1307,1108");
+        }
+        myRouter: MyRouter {
+            @display("p=112,852");
+        }
+        myRouter1: MyRouter {
+            @display("p=230,852");
+        }
+        myRouter2: MyRouter {
+            @display("p=112,956");
+        }
+        myRouter3: MyRouter {
+            @display("p=230,956");
+        }
+        myRouter4: MyRouter {
+            @display("p=434,852");
+        }
+        myRouter5: MyRouter {
+            @display("p=552,852");
+        }
+        myRouter6: MyRouter {
+            @display("p=434,956");
+        }
+        myRouter7: MyRouter {
+            @display("p=552,956");
+        }
+        myRouter8: MyRouter {
+            @display("p=774,852");
+        }
+        myRouter9: MyRouter {
+            @display("p=892,852");
+        }
+        myRouter10: MyRouter {
+            @display("p=774,956");
+        }
+        myRouter11: MyRouter {
+            @display("p=892,956");
+        }
+        myRouter12: MyRouter {
+            @display("p=1116,852");
+        }
+        myRouter13: MyRouter {
+            @display("p=1234,852");
+        }
+        myRouter14: MyRouter {
+            @display("p=1116,956");
+        }
+        myRouter15: MyRouter {
+            @display("p=1234,956");
+        }
+}
+

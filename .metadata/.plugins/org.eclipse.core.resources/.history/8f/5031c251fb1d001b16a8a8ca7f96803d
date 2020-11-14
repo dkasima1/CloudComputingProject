@@ -1,0 +1,67 @@
+package fat_tree_inet.simulations;
+
+import inet.examples.inet.ipv4hook.MyHost;
+import inet.examples.inet.ipv4hook.MyRouter;
+import inet.mobility.base.MovingMobilityBase;
+import inet.networklayer.configurator.ipv4.Ipv4FlatNetworkConfigurator;
+import inet.node.ethernet.EtherSwitch;
+import inet.node.inet.StandardHost;
+import ned.DatarateChannel;
+
+
+@license(LGPL);
+//
+// TODO documentation
+//
+network Network
+{
+    parameters:
+        @display("bgb=1330,893");
+        int num_leafs @prompt("Number of end users") = default(16);
+        int num_aggs = 16;
+        int aggs1 = int(num_aggs/2);
+        int aggs2 = int(num_aggs/2);
+        int num_spines = 4;
+        int num @display("bgb=1326,1100");
+    types:
+        channel LeafAggChannel extends DatarateChannel
+        {
+            datarate = 10Gbps;
+            delay = 1us;
+        }
+        channel AggSpineChannel extends DatarateChannel
+        {
+            datarate = 40Gbps;
+            delay = 5us;
+        }
+
+    submodules:
+        spine[num_spines]: EtherSwitch {
+            parameters:
+                @display("p=220,200,r,300");
+            gates:
+                ethg[4];
+        }
+
+        agg1[aggs1]: EtherSwitch {
+            parameters:
+                @display("p=135,300,r,150");
+            gates:
+                ethg[num_leafs];
+        }
+        agg2[aggs2]: EtherSwitch {
+            parameters:
+                @display("p=135,400,r,150");
+            gates:
+                ethg[num_leafs];
+        }
+        server[num_leafs]: StandardHost {
+            parameters:
+                @display("p=100,500,r,75");
+        }
+    connections allowunconnected:
+        for i=0..num_spines-1, for j=0..(int(aggs1/2))-1 {
+            spine[i].ethg[j] <--> AggSpineChannel <--> agg1[2*j].ethg[i];
+        }
+}
+

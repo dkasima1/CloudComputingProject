@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/fat_tree_inet -n .:../src $*
+# for shared lib, use: opp_run -l ../src/fat_tree_inet -n .:../src $*
