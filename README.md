@@ -29,5 +29,5 @@ Reproducing Jellyfish Results:
 4) Click run at the top to run the jellyfish network.
 5) In the gui, click the red start button.
 6) To generate new random connections for the jellyfish network open the jellyfish.ned file with is also in the src folder.
-7) In terminal run ./generate.py > <file_name>
+7) In terminal run "python3 ./generate.py > <file_name>"
 8) Copy the contents of the file and paste it into the jellyfish.ned connections section.
