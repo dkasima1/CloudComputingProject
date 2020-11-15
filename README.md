@@ -1,6 +1,9 @@
 # CloudComputingProject
 
-1) Install omnetpp IDE and make sure to install Inet while installing for your specific operating system. Follow the installation instructions here https://doc.omnetpp.org/omnetpp/InstallGuide.pdf.
+Omnet Installation:
+1) Install omnetpp IDE and make sure to install Inet while installing for your specific operating system. Follow the installation instructions here for automatic inet installation here https://inet.omnetpp.org/Installation.html and omnet here https://doc.omnetpp.org/omnetpp/InstallGuide.pdf.
+  - If you don't get a notification for inet's installation, it might still work because inet is copied into the github when you clone. 
+  - If that still doesn't work, you need to install inet to your workspace. Follow the manual installation instructions here. https://inet.omnetpp.org/Installation.html
 2) The install will take some time.
 3) Clone into the repository on your desktop with git clone.
 4) To start the IDE, navigate to where omnett was installed and open mingwenv.batch.
@@ -25,6 +28,6 @@ Reproducing Jellyfish Results:
 3) Open omnetpp.ini
 4) Click run at the top to run the jellyfish network.
 5) In the gui, click the red start button.
-6) To change the network open the jellyfish.ned file with is also in the src folder.
+6) To generate new random connections for the jellyfish network open the jellyfish.ned file with is also in the src folder.
 7) In terminal run ./generate.py > <file_name>
 8) Copy the contents of the file and paste it into the jellyfish.ned connections section.
