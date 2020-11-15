@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:simulations (1),org.eclipse.launchbar.core.descriptorType.default\:src,org.eclipse.launchbar.core.descriptorType.default\:lans - largeNet - LargeNet,org.eclipse.launchbar.core.descriptorType.default\:tictoc,org.eclipse.launchbar.core.descriptorType.default\:src (1),org.eclipse.launchbar.core.descriptorType.default\:simulations
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:src (2),org.eclipse.launchbar.core.descriptorType.default\:simulations (1),org.eclipse.launchbar.core.descriptorType.default\:src,org.eclipse.launchbar.core.descriptorType.default\:lans - largeNet - LargeNet,org.eclipse.launchbar.core.descriptorType.default\:tictoc,org.eclipse.launchbar.core.descriptorType.default\:src (1),org.eclipse.launchbar.core.descriptorType.default\:simulations
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:lans\ -\ largeNet\ -\ LargeNet/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:lans\ -\ largeNet\ -\ LargeNet/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

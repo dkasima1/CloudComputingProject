@@ -1,0 +1,3 @@
+package jellyfish;
+
+@license(LGPL);

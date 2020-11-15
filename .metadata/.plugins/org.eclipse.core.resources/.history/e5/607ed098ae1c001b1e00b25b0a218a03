@@ -1,5 +1,0 @@
-[General]
-network = Txc10
-
-[config Tictoc10]
-network = Txc10

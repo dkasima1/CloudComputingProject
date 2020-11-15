@@ -1,0 +1,481 @@
+file 21143 1605418663                                           
+version 2
+run General-0-20201115-00:37:17-5188
+attr configname General
+attr datetime 20201115-00:37:17
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Jellyfish
+attr processid 5188
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.app[*].dataTransferMode "\"object\""
+param **.tcp.recordStats true
+param **.client.numApps 1
+param **.client.app[*].typename "\"TcpBasicClientApp\""
+param **.client.app[*].localAddress "\"\""
+param **.client.app[*].localPort -1
+param **.client.app[*].connectAddress "\"servers[\"+string(index())+\"]\""
+param **.client.app[*].connectPort 80
+param **.client.app[*].startTime 2ms
+param **.client.app[*].requestLength 1000B
+param **.client.app[*].numRequestsPerSession 1
+param **.client.app[*].thinkTime 50us
+param **.client.app[*].idleInterval 150us
+param **.client.app[*].reconnectInterval 500us
+param **.servers[*].numApps 1
+param **.servers[*].app[*].typename "\"TcpGenericServerApp\""
+param **.servers[*].app[*].localAddress "\"\""
+param **.servers[*].app[*].localPort 80
+param **.switches[*].relayUnit.typename "\"MacRelayUnit\""
+
+vector 0 Jellyfish.client.app[0] numActiveSessions:vector ETV
+attr interpolationmode sample-hold
+attr source sum(connect)
+attr title "number of active sessions, vector"
+vector 1 Jellyfish.client.tcp.conn-16 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 2 Jellyfish.client.tcp.conn-16 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 3 Jellyfish.client.tcp.conn-16 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 4 Jellyfish.client.tcp.conn-16 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 5 Jellyfish.client.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 6 Jellyfish.client.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 7 Jellyfish.client.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 8 Jellyfish.client.eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 9 Jellyfish.client.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 10 Jellyfish.client.eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 11 Jellyfish.client.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 12 Jellyfish.client.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 13 Jellyfish.switches[15].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 14 Jellyfish.switches[15].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 15 Jellyfish.switches[15].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 16 Jellyfish.switches[15].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 17 Jellyfish.switches[15].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 18 Jellyfish.switches[15].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 19 Jellyfish.switches[15].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 20 Jellyfish.switches[15].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 21 Jellyfish.switches[15].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 22 Jellyfish.switches[15].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 23 Jellyfish.switches[15].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 24 Jellyfish.switches[15].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 25 Jellyfish.switches[15].eth[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 26 Jellyfish.switches[15].eth[3].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 27 Jellyfish.switches[15].eth[3].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 28 Jellyfish.switches[15].eth[3].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 29 Jellyfish.switches[15].eth[3].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 30 Jellyfish.switches[15].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 31 Jellyfish.switches[15].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 32 Jellyfish.switches[15].eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 33 Jellyfish.switches[17].eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 34 Jellyfish.switches[17].eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 35 Jellyfish.switches[1].eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 36 Jellyfish.switches[1].eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 37 Jellyfish.switches[9].eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 38 Jellyfish.switches[9].eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 39 Jellyfish.switches[17].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 40 Jellyfish.switches[17].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 41 Jellyfish.switches[17].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 42 Jellyfish.switches[17].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 43 Jellyfish.switches[17].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 44 Jellyfish.switches[17].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 45 Jellyfish.switches[17].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 46 Jellyfish.switches[17].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 47 Jellyfish.switches[17].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 48 Jellyfish.switches[17].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 49 Jellyfish.switches[17].eth[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 50 Jellyfish.switches[17].eth[3].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 51 Jellyfish.switches[17].eth[3].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 52 Jellyfish.switches[17].eth[3].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 53 Jellyfish.switches[17].eth[3].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 54 Jellyfish.switches[1].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 55 Jellyfish.switches[1].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 56 Jellyfish.switches[1].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 57 Jellyfish.switches[1].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 58 Jellyfish.switches[1].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 59 Jellyfish.switches[1].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 60 Jellyfish.switches[1].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 61 Jellyfish.switches[1].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 62 Jellyfish.switches[1].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 63 Jellyfish.switches[1].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 64 Jellyfish.switches[1].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 65 Jellyfish.switches[1].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 66 Jellyfish.switches[1].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 67 Jellyfish.switches[1].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 68 Jellyfish.switches[1].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 69 Jellyfish.switches[9].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 70 Jellyfish.switches[9].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 71 Jellyfish.switches[9].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 72 Jellyfish.switches[9].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 73 Jellyfish.switches[9].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 74 Jellyfish.switches[9].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 75 Jellyfish.switches[9].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 76 Jellyfish.switches[9].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 77 Jellyfish.switches[9].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 78 Jellyfish.switches[9].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 79 Jellyfish.switches[9].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 80 Jellyfish.switches[9].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 81 Jellyfish.switches[9].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 82 Jellyfish.switches[9].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 83 Jellyfish.switches[9].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 84 Jellyfish.switches[17].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 85 Jellyfish.switches[17].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 86 Jellyfish.switches[17].eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 87 Jellyfish.switches[1].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 88 Jellyfish.switches[1].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 89 Jellyfish.switches[1].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 90 Jellyfish.switches[9].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 91 Jellyfish.switches[9].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 92 Jellyfish.switches[9].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+0	19029 14 16 16 0.002 0.002 1 1 1 1 1
+1	19043 14 17 17 0.002 0.002 1 0 0 0 0
+2	19057 17 17 17 0.002 0.002 1 7504 7504 7504 56310016
+3	19074 17 17 17 0.002 0.002 1 7504 7504 7504 56310016
+4	19091 14 17 17 0.002 0.002 1 0 0 0 0
+5	19105 15 18 18 0.002 0.002 1 28 28 28 784
+6	19120 15 19 19 0.002 0.002 1 28 28 28 784
+7	19135 15 20 20 0.002 0.002 1 46 46 46 2116
+8	19150 15 20 20 0.002 0.002 1 64 64 64 4096
+9	19165 28 20 20 0.002 0.002 2 0 1 1 1
+10	19193 16 20 20 0.002 0.002 1 64 64 64 4096
+11	19209 15 20 20 0.002 0.002 1 0 0 0 0
+12	19224 21 22 22 0.00200576 0.00200576 1 64 64 64 4096
+13	19245 21 23 23 0.00200586 0.00200586 1 64 64 64 4096
+14	19266 21 23 23 0.00200586 0.00200586 1 64 64 64 4096
+15	19287 21 25 25 0.00200586 0.00200586 1 64 64 64 4096
+16	19308 21 25 25 0.00200586 0.00200586 1 64 64 64 4096
+17	19329 40 25 25 0.00200586 0.00200586 2 0 1 1 1
+18	19369 21 25 25 0.00200586 0.00200586 1 64 64 64 4096
+19	19390 20 25 25 0.00200586 0.00200586 1 0 0 0 0
+20	19410 21 26 26 0.00200586 0.00200586 1 64 64 64 4096
+21	19431 21 26 26 0.00200586 0.00200586 1 64 64 64 4096
+22	19452 40 26 26 0.00200586 0.00200586 2 0 1 1 1
+23	19492 21 26 26 0.00200586 0.00200586 1 64 64 64 4096
+24	19513 20 26 26 0.00200586 0.00200586 1 0 0 0 0
+25	19533 21 27 27 0.00200586 0.00200586 1 64 64 64 4096
+26	19554 21 27 27 0.00200586 0.00200586 1 64 64 64 4096
+27	19575 40 27 27 0.00200586 0.00200586 2 0 1 1 1
+28	19615 21 27 27 0.00200586 0.00200586 1 64 64 64 4096
+29	19636 20 27 27 0.00200586 0.00200586 1 0 0 0 0
+30	19656 21 33 33 0.00201162 0.00201162 1 64 64 64 4096
+31	19677 21 34 34 0.00201162 0.00201162 1 64 64 64 4096
+32	19698 21 35 35 0.00201162 0.00201162 1 64 64 64 4096
+33	19719 21 36 36 0.00201172 0.00201172 1 64 64 64 4096
+34	19740 21 36 36 0.00201172 0.00201172 1 64 64 64 4096
+35	19761 21 37 37 0.00201172 0.00201172 1 64 64 64 4096
+36	19782 21 37 37 0.00201172 0.00201172 1 64 64 64 4096
+37	19803 21 38 38 0.00201172 0.00201172 1 64 64 64 4096
+38	19824 21 38 38 0.00201172 0.00201172 1 64 64 64 4096
+39	19845 21 42 42 0.00201172 0.00201172 1 64 64 64 4096
+40	19866 21 42 42 0.00201172 0.00201172 1 64 64 64 4096
+41	19887 40 42 42 0.00201172 0.00201172 2 0 1 1 1
+42	19927 21 42 42 0.00201172 0.00201172 1 64 64 64 4096
+43	19948 20 42 42 0.00201172 0.00201172 1 0 0 0 0
+44	19968 21 43 43 0.00201172 0.00201172 1 64 64 64 4096
+45	19989 21 43 43 0.00201172 0.00201172 1 64 64 64 4096
+46	20010 40 43 43 0.00201172 0.00201172 2 0 1 1 1
+47	20050 21 43 43 0.00201172 0.00201172 1 64 64 64 4096
+48	20071 20 43 43 0.00201172 0.00201172 1 0 0 0 0
+49	20091 21 44 44 0.00201172 0.00201172 1 64 64 64 4096
+50	20112 21 44 44 0.00201172 0.00201172 1 64 64 64 4096
+51	20133 40 44 44 0.00201172 0.00201172 2 0 1 1 1
+52	20173 21 44 44 0.00201172 0.00201172 1 64 64 64 4096
+53	20194 20 44 44 0.00201172 0.00201172 1 0 0 0 0
+54	20214 21 45 45 0.00201172 0.00201172 1 64 64 64 4096
+55	20235 21 45 45 0.00201172 0.00201172 1 64 64 64 4096
+56	20256 40 45 45 0.00201172 0.00201172 2 0 1 1 1
+57	20296 21 45 45 0.00201172 0.00201172 1 64 64 64 4096
+58	20317 20 45 45 0.00201172 0.00201172 1 0 0 0 0
+59	20337 21 46 46 0.00201172 0.00201172 1 64 64 64 4096
+60	20358 21 46 46 0.00201172 0.00201172 1 64 64 64 4096
+61	20379 40 46 46 0.00201172 0.00201172 2 0 1 1 1
+62	20419 21 46 46 0.00201172 0.00201172 1 64 64 64 4096
+63	20440 20 46 46 0.00201172 0.00201172 1 0 0 0 0
+64	20460 21 47 47 0.00201172 0.00201172 1 64 64 64 4096
+65	20481 21 47 47 0.00201172 0.00201172 1 64 64 64 4096
+66	20502 40 47 47 0.00201172 0.00201172 2 0 1 1 1
+67	20542 21 47 47 0.00201172 0.00201172 1 64 64 64 4096
+68	20563 20 47 47 0.00201172 0.00201172 1 0 0 0 0
+69	20583 21 48 48 0.00201172 0.00201172 1 64 64 64 4096
+70	20604 21 48 48 0.00201172 0.00201172 1 64 64 64 4096
+71	20625 40 48 48 0.00201172 0.00201172 2 0 1 1 1
+72	20665 21 48 48 0.00201172 0.00201172 1 64 64 64 4096
+73	20686 20 48 48 0.00201172 0.00201172 1 0 0 0 0
+74	20706 21 49 49 0.00201172 0.00201172 1 64 64 64 4096
+75	20727 21 49 49 0.00201172 0.00201172 1 64 64 64 4096
+76	20748 40 49 49 0.00201172 0.00201172 2 0 1 1 1
+77	20788 21 49 49 0.00201172 0.00201172 1 64 64 64 4096
+78	20809 20 49 49 0.00201172 0.00201172 1 0 0 0 0
+79	20829 21 50 50 0.00201172 0.00201172 1 64 64 64 4096
+80	20850 21 50 50 0.00201172 0.00201172 1 64 64 64 4096
+81	20871 40 50 50 0.00201172 0.00201172 2 0 1 1 1
+82	20911 21 50 50 0.00201172 0.00201172 1 64 64 64 4096
+83	20932 20 50 50 0.00201172 0.00201172 1 0 0 0 0
+84	20952 21 64 64 0.00201748 0.00201748 1 64 64 64 4096
+85	20973 21 65 65 0.00201748 0.00201748 1 64 64 64 4096
+86	20994 21 66 66 0.00201748 0.00201748 1 64 64 64 4096
+87	21015 21 67 67 0.00201748 0.00201748 1 64 64 64 4096
+88	21036 21 68 68 0.00201748 0.00201748 1 64 64 64 4096
+89	21057 21 69 69 0.00201748 0.00201748 1 64 64 64 4096
+90	21078 21 70 70 0.00201748 0.00201748 1 64 64 64 4096
+91	21099 21 71 71 0.00201748 0.00201748 1 64 64 64 4096
+92	21120 21 72 72 0.00201748 0.00201748 1 64 64 64 4096
+
