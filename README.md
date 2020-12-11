@@ -23,4 +23,9 @@ Reproducing Jellyfish Results:
 4) Run the pox controller by running the command "python3 ./pox.py openflow.discovery openflow.spanning_tree forwarding.l2_learning" or "python3 ./pox.py openflow.discovery openflow.spanning_tree forwarding.l2_pairs".
 5) l2_learning is much slower than l2_pairs.
 
+Generate Data about Jellyfish:
+1) Call the generate.py script in aidanutility1
+2) IMPORTANT: script must be called using "python3.6 generate.py"
+3) Pass arguments to specify number of switches, hosts, ports, and k for shortest paths. (default to 20-16-4)
+4) If you want to change how much data is calculated/printed, edit generate.py to change some of the constants. For example, setting PRINT_SHORTEST_PATHS to true will print the individual shortest paths.
 
